@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-image: url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 40px;
+            color: #0b3d91;
+        }
+
+        section {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-left: 5px solid #0b3d91;
+            width: 80%;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .servicio {
+            background: white;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.1)
+        }
+
+        .servicio h3 {
+            margin-bottom: 5px;
+            color: #0b3d92;
+        }
+
+        .barco {
+            background: white;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.1)
+        }
+        .barco img {
+        border-radius: 10px;
+        margin-top: 10px;
+        }
+
+        .barco h3 {
+            color: #0b3d91
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            border-radius: 50px;
+            padding: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .whatsapp img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+        .whatsapp {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .hero {
+    height: 90vh;
+    background-image: url("imagenes/IMG-20260412-WA0070.jpg"); /* puedes cambiar por tu foto */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Capa oscura encima de la imagen */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+/* Contenido */
+.contenido-hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+}
+
+.contenido-hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.contenido-hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #25D366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #1ebe5d;
+}
+
+        #nosotros {
+            text-align: center;
+        }
+
+        #nosotros p {
+            max-width: 800px;
+            margin: 10px auto;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width:40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            }
+        button {
+            background-color: #0b3d91;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #082c6c;
+        }
+        
+        .galeria-container {
+            max-width: 800PX;
+            margin: AUTO;
+        }
+
+        .principal {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .principal img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #748eba;
+        }
+
+        .miniaturas {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .miniaturas img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .miniaturas img:hover {
+            opacity: 1;
+            filter: brightness(1.2);
+            transform: translateY(-5px);
+        }
+
+        .miniaturas img.activa {
+            outline: 3px solid #25d366;
+            opacity: 1;
+        }
+
+        .tabla-precios {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tabla-precios th {
+            background-color: #0b3d91;
+            color: white;
+            padding: 12px;
+        }
+
+        .tabla-precios td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tabla-precios tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        @media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .contenido-hero h1 {
+        font-size: 24px;
+    }
+
+    .contenido-hero p {
+        font-size: 14px;
+    }
+
+    .hero {
+        height: 70vh;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .tabla-precios {
+        font-size: 12px;
+    }
+
+    .tabla-precios th,
+    .tabla-precios td {
+        padding: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    section {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .whatsapp {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp img {
+        width: 30px;
+        height: 30px;
+    }
+}
+    </style>
+    <meta charset="UTF-8">
+    <title>Multiservicios Cristina S.A.S</title>
+    <link rel="icon" href="FB_IMG_1775971832689.jpg">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="FB_IMG_1775971832689.jpg" alt="Logo empresa fluvial">
+            <span>Empresa fluvial</span>
+        </div>
+
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#Servicios">Servicios</a></li>
+            <li><a href="#flota">Flota</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#precios">Precios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <a class="whatsapp" href="https://wa.me/573044030857?text=hola,%20quiero%20información%20sobre%20transporte%20fluvial" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+
+    <main>
+    <section id="inicio" class="hero">
+    <div class="contenido-hero">
+        <h1>Transporte Fluvial Seguro y Confiable</h1>
+        <p>Pasajeros, carga, expresos y alimentación por contrato</p>
+
+        <a href="#contacto" class="btn">Contáctanos</a>
+    </div>
+</section>
+
+    <section id="nosotros">
+        <h2>Sobre nosotros</h2>
+        <p>
+            Somos una empresa de transporte fluvial dedicada a conectar comunidades,transportar carga y ofrecer servicios expresos con seguridad, puntualidad y confianza.
+        </p>
+
+        <p>
+            Contamos con experiencia en rutas fluviales estrategicas y una flota de embarcaciones adaptadas para pasajeros, carga y servicios mixtos.
+        </p>
+    </section>
+    <section id="Servicios">
+        <h2>Servicios</h2>
+        
+
+        <div class="Servicios">
+            <h3>👨‍🦰Transporte de pasajeros👩</h3>
+            <p>movilizamos personas de forma segura y confiable</p>
+        </div>
+
+        <div class="Servicios">
+            <h3>📦 transporte de carga</h3>
+            <p>transladamos carga ligera y mercancia </p>
+        </div>
+
+        <div class="Servicios">
+            <h3>⚡servicio especial</h3>
+            <p>viajes rapidos y especiales</p>
+        </div>
+
+        <div class="Servicios">
+            <h3>🗺️Rutas fluviales🚤</h3>
+            <p>Operamos rutas establecidas y personalizadas</p>
+        </div>
+        <div class="Servicios">
+            <h3>🍽️alimentación por contrato</h3>
+            <p>ofrecemos servicio de alimentacion para empresas, proyectos y comunidades, adaptandonos a las necesidades el cliente</p>
+        </div>
+    </section>
+
+    <section id="flota">
+        <h2>Flota de embarcaciones</h2>
+
+        <div class="barco">
+            <h3>🚤Yate Express</h3>
+            <p>Capacidad: segun lo solicitado se define</p>
+            <p>servico: expresos y transporte rápido</p>
+        </div>
+
+        <div class="barco">
+            <h3>Yate de ruta</h3>
+            <p>capacidad: 20 pasajeros y carga</p>
+            <p>servicio: Transporte de carga y pasajeros</p>
+        </div>
+        <section id="galeria">
+            <h2>Galeria</h2>
+
+            <div class="galeria-container">
+
+                <div class="principal">
+                    <img id="imgPrincipal" src="imagenes/IMG-20260412-WA0070.jpg">
+                </div>
+                <div class="miniaturas">
+                <img src="imagenes/IMG-20260412-WA0062.jpg" onmouseover="cambiarImagen(this)">
+                <img src="imagenes/IMG-20260412-WA0063.jpg" onmouseover="cambiarImagen(this)">
+                <img src="imagenes/IMG-20260412-WA0064.jpg" onmouseover="cambiarImagen(this)">
+                <img src="imagenes/IMG-20260412-WA0065.jpg" onmouseover="cambiarImagen(this)">
+                <img src="imagenes/IMG-20260412-WA0066.jpg" onmouseover="cambiarImagen(this)">
+                <img src="imagenes/IMG-20260412-WA0067.jpg" onmouseover="cambiarImagen(this)">
+                <img src="imagenes/IMG-20260412-WA0068.jpg" onmouseover="cambiarImagen(this)">
+                <img src="imagenes/IMG-20260412-WA0069.jpg" onmouseover="cambiarImagen(this)">
+                <img src="imagenes/IMG-20260412-WA0070.jpg" onmouseover="cambiarImagen(this)">
+                <img src="imagenes/IMG-20260412-WA0071.jpg" onmouseover="cambiarImagen(this)">
+            </div>
+        </section>
+    </section>
+    <section id="precios">
+    <h2>Precios de Rutas</h2>
+
+    <table class="tabla-precios">
+        <tr>
+            <th>Trayecto</th>
+            <th>Precio</th>
+        </tr>
+
+        <tr><td>Barranco Minas - Inírida</td><td>$320.000</td></tr>
+        <tr><td>Barranco Minas - Chatare</td><td>$40.000</td></tr>
+        <tr><td>Barranco Minas - Chigüiro</td><td>$60.000</td></tr>
+        <tr><td>Barranco Minas - Picure</td><td>$70.000</td></tr>
+        <tr><td>Barranco Minas - Murciélago</td><td>$80.000</td></tr>
+        <tr><td>Barranco Minas - Curvina</td><td>$120.000</td></tr>
+    </table>
+</section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Solicita informacion o cotización:</p>
+
+        <form>
+            <input type="text" placeholder="Nombre" required><br><br>
+            <input type="tel" placeholder="Telefono" required><br><br>
+            <textarea placeholder="Escribe tu solicitud..."required></textarea><br><br>
+            <button type="submit">Enviar</button>
+        </form>
+        
+
+        <p><strong>📲 WhatsApp:</strong> Disponible 24/7</p>
+        <p><strong>🚤 Servicio:</strong> Transporte de pasajeros, carga y expresos</p>
+    </section>
+    </main>
+    <script>
+        function cambiarImagen(imagen) {
+            const principal = document.getElementById("imgPrincipal");
+
+            principal.style.opacity = 0;
+
+            setTimeout(() => {
+                principal.src = imagen.src;
+                principal.style.opacity = 1;
+            }, 200);
+            document.querySelectorAll(".miniaturas img").forEach(img => {
+                img.classList.remove("activa");
+            });
+
+            imagen.classList.add("activa");
+        }
+    </script>
+
+</body>
+</html>
